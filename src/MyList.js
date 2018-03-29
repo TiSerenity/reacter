@@ -32,5 +32,11 @@ export const folderList = (
       </ListItemIcon>
       <ListItemText primary="material-ui" />
     </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <StarIcon />
+      </ListItemIcon>
+      <ListItemText primary="java" />
+    </ListItem>
   </div>
 );

@@ -7,7 +7,6 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import List from 'material-ui/List';
 import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
@@ -20,16 +19,12 @@ const drawerWidth = 200;
 const styles = theme => ({
   //控制appBar的移动
   appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+    width: `calc(100% - ${drawerWidth}px)`
   },
 //抽屉开关离边缘距离
   menuButton: { 
     marginLeft: 12,
-    marginRight: 20,
+    marginRight: 20
   },
   //打开抽屉后,按钮消失
   hide: {
@@ -38,12 +33,11 @@ const styles = theme => ({
   //抽屉顶端按钮样式
   drawerHeader: {
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '0 8px',
     //保持和toolBar最小值一样
     ...theme.mixins.toolbar,
-  },
+  }
 });
 //抽屉组件
 class MyDrawer extends React.Component { 
@@ -72,12 +66,11 @@ class MyDrawer extends React.Component {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
-        <Divider />
         <List>{folderList}</List>
       </Drawer>
     );
 
-    
+    //判断抽屉是否打开
     var displayFolder = null;
     if (open) {
       displayFolder = drawer;
@@ -95,7 +88,7 @@ class MyDrawer extends React.Component {
               <IconButton color="inherit"
                 //点击触发打开抽屉的事件
                 onClick={this.handleDrawerOpen}
-              >
+                >
                 <MenuIcon />
               </IconButton>
               <Typography variant="title" color="inherit">
